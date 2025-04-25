@@ -1,4 +1,4 @@
-** Post Master Purposes
+# Post Master Purposes
 
 * Postman' in basic şekli, API isteklerini gönderip, cevaplarını alabileceğin bir arayüz.
 
