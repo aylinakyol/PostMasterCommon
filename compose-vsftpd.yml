@@ -1,0 +1,21 @@
+name: VSFTPD
+# name: <ProjectName>
+
+services:
+  vsftpd:
+    image: vsftpd
+    ports:
+      - 21:21
+      - 21000-21010:21000-21010
+    networks:
+      - front-tier
+    # volumes:
+      ../<ProjectName>Django/<projectname>ftp:/home/ftpuser/ftp
+    command: sh -c "vsftpd /etc/vsftpd.conf"
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
+    # internal: true # Bu değer production'da mutlaka uncomment yapılmalı.

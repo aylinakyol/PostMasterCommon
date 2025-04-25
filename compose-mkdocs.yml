@@ -1,0 +1,19 @@
+name: <ProjectName>
+
+services:
+  mkdocs:
+    image: mkdocs
+    ports:
+      - 8000:8000
+    networks:
+      - front-tier
+    volumes:
+      - ./<projectname>:/app
+    command: mkdocs serve -a 0.0.0.0:8000
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
+    # internal: true # Bu değer production'da mutlaka uncomment yapılmalı.
